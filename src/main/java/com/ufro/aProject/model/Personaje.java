@@ -19,22 +19,22 @@ public class Personaje {
     private String descripcion;
 
     @Column(name = "vida", nullable = false)
-    private Long vida;
+    private int vida;
 
     @Column(name = "daño", nullable = false)
-    private Long daño;
+    private int daño;
 
     @Column(name = "velocidad", nullable = false)
-    private Long velocidad;
+    private int velocidad;
 
     @Column(name = "armadura", nullable = false)
-    private Long enfriamiento;
+    private int enfriamiento;
 
     @Column(name = "evasion", nullable = false)
-    private Long evasion;
+    private int evasion;
 
     @Column(name = "sigilo", nullable = false)
-    private Long sigilo;
+    private int sigilo;
 
 
     // clave foranea
@@ -47,6 +47,19 @@ public class Personaje {
 
     public Personaje() {
     }
+
+    public Personaje(String nombre, String descripcion, int vida, int daño, int velocidad, int enfriamiento, int evasion, int sigilo, List<Habilidad> habilidades) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.vida = vida;
+        this.daño = daño;
+        this.velocidad = velocidad;
+        this.enfriamiento = enfriamiento;
+        this.evasion = evasion;
+        this.sigilo = sigilo;
+        this.habilidades = habilidades;
+    }
+
     public Long getId() {
         return id;
     }
@@ -71,54 +84,59 @@ public class Personaje {
         this.descripcion = descripcion;
     }
 
-    public Long getVida() {
+    public int getVida() {
         return vida;
     }
 
-    public void setVida(Long vida) {
+    public void setVida(int vida) {
         this.vida = vida;
     }
 
-    public Long getDaño() {
+    public int getDaño() {
         return daño;
     }
 
-    public void setDaño(Long daño) {
+    public void setDaño(int daño) {
         this.daño = daño;
     }
 
-    public Long getVelocidad() {
+    public int getVelocidad() {
         return velocidad;
     }
 
-    public void setVelocidad(Long velocidad) {
+    public void setVelocidad(int velocidad) {
         this.velocidad = velocidad;
     }
 
-    public Long getEnfriamiento() {
+    public int getEnfriamiento() {
         return enfriamiento;
     }
 
-    public void setEnfriamiento(Long enfriamiento) {
+    public void setEnfriamiento(int enfriamiento) {
         this.enfriamiento = enfriamiento;
     }
 
-    public Long getEvasion() {
+    public int getEvasion() {
         return evasion;
     }
 
-    public void setEvasion(Long evasion) {
+    public void setEvasion(int evasion) {
         this.evasion = evasion;
     }
 
-    public Long getSigilo() {
+    public int getSigilo() {
         return sigilo;
     }
 
-    public void setSigilo(Long sigilo) {
+    public void setSigilo(int sigilo) {
         this.sigilo = sigilo;
     }
 
+    public List<Habilidad> getHabilidades() {
+        return habilidades;
+    }
 
-
+    public void setHabilidades(List<Habilidad> habilidades) {
+        this.habilidades = habilidades;
+    }
 }
