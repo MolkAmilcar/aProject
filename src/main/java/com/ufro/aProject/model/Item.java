@@ -1,11 +1,10 @@
 package com.ufro.aProject.repository;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
-public class Habilidad {
-
-
+public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -17,17 +16,18 @@ public class Habilidad {
     @Column(name = "descripcion", nullable = false, columnDefinition = "TEXT")
     private String descripcion;
 
-    @Column(name = "enfriamiento", nullable = false)
-    private Long enfriamiento;
+    @OneToMany(mappedBy = "comentario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private ArrayList<Comentario> comentarios;
 
-    public Habilidad() {}
+    public Item(){}
 
-    public Habilidad(Long id, String nombre, String descripcion, Long enfriamiento) {
+    public Item(Long id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.enfriamiento = enfriamiento;
     }
+
+    public void mostrarInformacion() {}
 
     public Long getId() {
         return id;
@@ -51,13 +51,5 @@ public class Habilidad {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public Long getEnfriamiento() {
-        return enfriamiento;
-    }
-
-    public void setEnfriamiento(Long enfriamiento) {
-        this.enfriamiento = enfriamiento;
     }
 }
