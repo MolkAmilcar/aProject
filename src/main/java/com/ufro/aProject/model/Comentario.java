@@ -1,4 +1,4 @@
-package com.ufro.aProject.repository;
+package com.ufro.aProject.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
