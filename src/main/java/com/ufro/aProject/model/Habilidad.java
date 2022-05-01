@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 public class Habilidad {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

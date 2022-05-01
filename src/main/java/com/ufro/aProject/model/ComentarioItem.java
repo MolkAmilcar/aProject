@@ -1,4 +1,4 @@
-package com.ufro.aProject.repository;
+package com.ufro.aProject.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -6,8 +6,7 @@ import java.text.DateFormat;
 import java.util.Locale;
 
 @Entity
-public class Comentario {
-
+public class ComentarioItem {
     //columnas
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +25,16 @@ public class Comentario {
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
+    @ManyToOne
+    @JoinColumn(name="item_id")
+    private Item item;
+
     //constructores, getters y setters
-    public Comentario() {
+    public ComentarioItem() {
 
     }
-
-    public Comentario(String titulo, Timestamp fecha, String mensaje, String nombre) {
+    //TODO crear metodo que genera nombres aleatorios
+    public ComentarioItem(String titulo, Timestamp fecha, String mensaje, String nombre) {
         this.titulo = titulo;
         this.fecha = fecha;
         this.mensaje = mensaje;

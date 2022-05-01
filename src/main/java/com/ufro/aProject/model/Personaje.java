@@ -15,6 +15,9 @@ public class Personaje {
     @Column(name = "nombre", nullable = false, length = 80)
     private String nombre;
 
+    @Column(name = "imagen", nullable = false)
+    private String imagen;
+
     @Column(name = "descripcion", nullable = false, columnDefinition = "TEXT")
     private String descripcion;
 
@@ -139,4 +142,5 @@ public class Personaje {
     public void setHabilidades(List<Habilidad> habilidades) {
         this.habilidades = habilidades;
     }
+
 }
