@@ -138,14 +138,27 @@ footer {
 }
 
 .listado-personajes{
-    display: grid;
-    justify-content:center;
+    display: flex;
+    max-width:650px;
+    flex-direction: row;
+    jusify-self: center;
+    flex-wrap: wrap;
 }
+
+.contenido-personajes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .fila-personajes{
     margin-top: 40px;
-    width: 650px;
+    max-width: 650px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .col-personajes a img{
@@ -181,8 +194,10 @@ footer {
 }
 
 .col-personajes{
+    margin-bottom:30px;
     display: grid;
     justify-content: center;
+    width: 200px;
 }
 
 .items{

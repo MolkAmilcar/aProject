@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"/>
+<head>
+    <link rel="stylesheet" th:href="@{style.css}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href=' http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <header>
+        <nav>
+            <title>A project</title>            
+            <ul class="inicio">
+                <li class="logo"><a href="../../../../../vistasProjectA/index.html"><img src="imagenes/logoEyeBackground.png" width='88' height='70' alt="logo"></a></li>
+                <li class="logo"><a href="../../../../../vistasProjectA/index.html">Project</a></li>
+            </ul>
+            <p class="vacio"></p>
+            <ul class="menu">
+                <li class="elementos"><a href="../../../../../vistasProjectA/sobre-nosotros.html">Sobre nosotros</a></li>
+                <li class="elementos"><a>|</a></li>
+                <li class="elementos"><a href="../../../../../vistasProjectA/faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cuerpo">
+        <div class="ficha-elemento">
+            <div class="info-elemento">
+                <div class="img-ficha-elemento">
+                    <img th:src="${personaje.getImagen()}" width='200' height='200'alt="personaje">
+                    <p th:text="${personaje.getNombre()}"></p>
+                </div>
+                <div class="stats-ficha-elemento">
+                    <p>Estadisticas</p>
+                    <img src="imagenes/blockstats.png" width='250' height='200'alt="personaje">
+                </div>                
+            </div>
+            <div class="descripcion-ficha">
+                <h2>Descripcion</h2>
+                <p th:text="${personaje.getDescripcion()}"></p>
+            </div>
+
+            <div class="seccion-comentarios">
+                <div class="titulo-comentario">
+                    <h1>Comentarios</h1>
+                </div> 
+                <div class="formulario-comentario">
+                    <textarea class="mensaje" name="mensaje" placeholder="Únete a la discusión..."></textarea>
+                </div>
+                <input type="image" class="subir-comentario" name="subirComentarioButton" src="imagenes/subirComentarioButton.png" width="200" alt="subir comentario">
+                <p class="separacion"></p>
+                <div class="comentario">
+                    <p class="nombre-usuario"> Jugador X</p>
+                    <p class="fecha"> Marzo 03 - 2022</p>
+                    <p class="texto-comentario">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis risus non diam dictum placerat. In gravida erat neque, vitae sagittis metus tincidunt vitae.</p>
+                </div>
+                <div class="comentario">
+                    <p class="nombre-usuario"> Jugador X</p>
+                    <p class="fecha"> Marzo 03 - 2022</p>
+                    <p class="texto-comentario">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis risus non diam dictum placerat. In gravida erat neque, vitae sagittis metus tincidunt vitae.</p>
+                </div>
+                <p class="separacion"></p>
+            </div>
+        </div>       
+                
+    </div>
+
+    <footer>
+        <ul>
+            <a href="#"><img src="imagenes/instagramIcon.png" class="socials" width="30" height='30' name='whatever'></a>
+            <a href="#"><img src="imagenes/facebookIcon.png" class="socials" width="30" height='30' name='whatever'></a>
+            <a href="#"><img src="imagenes/twitterIcon.png" class="socials" width="30" height='30' name='whatever'></a>
+            <a href="#"><img src="imagenes/facebookIcon.png" class="socials" width="30" height="30" name='whatever'></a>
+        </ul>
+        <p></p>        
+        <input type='image' class="download" src='imagenes/descargarIcon.png' height="40" name='whatever' value='submit' />
+    </footer>
+
+</body>
+</body>
+</html>

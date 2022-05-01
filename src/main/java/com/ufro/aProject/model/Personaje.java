@@ -135,6 +135,14 @@ public class Personaje {
         this.sigilo = sigilo;
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
     public List<Habilidad> getHabilidades() {
         return habilidades;
     }

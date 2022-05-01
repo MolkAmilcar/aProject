@@ -35,32 +35,10 @@
                     <h1>Personajes</h1>
                 </div>
                 <div class="listado-personajes">
-                    <div class="fila-personajes">
-                        <div class="col-personajes">
-                            <a href="ficha-personaje.html"><img th:src="@{imagenes/CroagunkFront.png}"  width="150" height="150" name="whatever"></a>
-                            <a href="ficha-personaje.html"><p >Nombre personaje</p></a>
-                        </div>
-                        <div class="col-personajes">
-                            <a href="ficha-personaje.html"><img th:src="@{imagenes/CroagunkFront.png}"  width="150" height="150" name="whatever"></a>
-                            <a href="ficha-personaje.html"><p >Nombre personaje</p></a>
-                        </div>
-                        <div class="col-personajes">
-                            <a href="ficha-personaje.html"><img th:src="@{imagenes/CroagunkFront.png}"  width="150" height="150" name="whatever"></a>
-                            <a href="ficha-personaje.html"><p >Nombre personaje</p></a>
-                        </div>
-                    </div>
-                    <div class="fila-personajes">
-                        <div class="col-personajes">
-                            <a href="ficha-personaje.html"><img th:src="@{imagenes/CroagunkFront.png}"  width="150" height="150" name="whatever"></a>
-                            <a href="ficha-personaje.html"><p >Nombre personaje</p></a>
-                        </div>
-                        <div class="col-personajes">
-                            <a href="ficha-personaje.html"><img th:src="@{imagenes/CroagunkFront.png}"  width="150" height="150" name="whatever"></a>
-                            <a href="ficha-personaje.html"><p >Nombre personaje</p></a>
-                        </div>
-                        <div class="col-personajes">
-                            <a href="ficha-personaje.html"><img th:src="@{imagenes/CroagunkFront.png}"  width="150" height="150" name="whatever"></a>
-                            <a href="ficha-personaje.html"><p >Nombre personaje</p></a>
+                    <div class="fila-personajes" >
+                        <div class="col-personajes" th:each="personaje:${personajes}">
+                            <a th:href="@{/personaje(id= ${personaje.getId()})}"><img th:src="${personaje.getImagen()}"  width="150" height="150" name="whatever"></a>
+                            <a th:href="@{/personaje(id= ${personaje.getId()})}"><p th:text="${personaje.getNombre()}"></p></a>
                         </div>
                     </div>
                 </div>
