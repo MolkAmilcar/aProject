@@ -69,7 +69,7 @@ footer {
 
 #logo-inicio {    
     padding-top: 30px;
-    display: grclass;
+    display: grid;
     justify-content: center;
 }
 
@@ -94,7 +94,7 @@ footer {
 }
 
 #cuerpo-inicio {    
-    display: grclass;
+    display: grid;
     justify-content: center;
 }
 
@@ -138,7 +138,7 @@ footer {
 }
 
 #listado-personajes{
-    display: grclass;
+    display: grid;
     justify-content:center;
 }
 #fila-personajes{
@@ -155,7 +155,7 @@ footer {
     padding-right: 10px;
     border: 9px;
     border-color: #634368;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
     text-decoration: none;
 }
@@ -175,13 +175,13 @@ footer {
     background-color:#805A4F ;
     border: 9px;
     border-color: #805A4F;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
     
 }
 
 #col-personajes{
-    display: grclass;
+    display: grid;
     justify-content: center;
 }
 
@@ -203,12 +203,12 @@ footer {
     justify-content: center;
     border: 9px;
     border-color: #634368;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
 }
 
 #listado-items{
-    display: grclass;
+    display: grid;
     justify-content:center;
 }
 #fila-items{
@@ -225,7 +225,7 @@ footer {
     padding-right: 10px;
     border: 9px;
     border-color: #634368;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
     text-decoration: none;
 }
@@ -245,18 +245,18 @@ footer {
     background-color:#805A4F ;
     border: 9px;
     border-color: #805A4F;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
     
 }
 
 #col-items{
-    display: grclass;
+    display: grid;
     justify-content: center;
 }
 
 #sobre-nosotros{
-    display:grclass;
+    display:grid;
     justify-content: center;
 }
 
@@ -273,7 +273,7 @@ footer {
     justify-content: center;
     border: 9px;
     border-color: #634368;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
 }
 
@@ -287,7 +287,7 @@ footer {
     align-items: center;
     border: 9px;
     border-color: #815F82;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
     padding: 50px;
     font-size: 20px;
@@ -296,7 +296,7 @@ footer {
 }
 
 #faq{
-    display:grclass;
+    display:grid;
     justify-content: center;
 }
 
@@ -313,7 +313,7 @@ footer {
     justify-content: center;
     border: 9px;
     border-color: #634368;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
 }
 
@@ -343,7 +343,7 @@ footer {
     border: 0px ;
     border-left: 9px;
     border-color: #634368;
-    border-style: solclass;
+    border-style: solid;
     margin-bottom: 0px;
 }
 
@@ -358,12 +358,12 @@ footer {
     border: 0px ;
     border-left: 9px;
     border-color: #A986AE;
-    border-style: solclass;
+    border-style: solid;
     line-height: 22px;
 }
 
 #ficha-elemento{
-    display: grclass;
+    display: grid;
     justify-content: center;
 }
 
@@ -376,7 +376,7 @@ footer {
 
 #img-ficha-elemento{
     background-color:#815F82;
-    display: grclass;
+    display: grid;
     justify-content: center;
     wclassth: 300px;
     height: 300px;
@@ -395,7 +395,7 @@ footer {
 
 #stats-ficha-elemento{
     background-color:#815F82;
-    display: grclass;
+    display: grid;
     justify-content: center;
     align-items: center;
     wclassth: 300px;
@@ -428,7 +428,7 @@ footer {
 }
 
 #seccion-comentarios{
-    display: grclass;
+    display: grid;
     font-family: VT323 ;
     justify-content: center;
 }
@@ -442,7 +442,7 @@ footer {
     background-color: #815F82;
     border: 9px;
     border-color: #634368;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
 }
 #formulario-comentario{    
@@ -450,12 +450,12 @@ footer {
     wclassth: 700px;
     padding: 20px;
     align-items: center;
-    display: grclass;
+    display: grid;
     justify-content: center;
     background-color: #815F82;
     border: 9px;
     border-color: #634368;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
 }
 
@@ -480,12 +480,12 @@ footer {
     wclassth: 700px;
     padding: 20px;
     align-items: center;
-    display: grclass;
+    display: grid;
     justify-content: center;
     background-color: #E8E8E8;
     border: 9px;
     border-color: #E8E8E8;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
 }
 
@@ -542,7 +542,7 @@ footer {
 #purpleOutline{
     border: 9px;
     border-color: #634368;
-    border-style: solclass;
+    border-style: solid;
     border-radius:9px;
 }
 

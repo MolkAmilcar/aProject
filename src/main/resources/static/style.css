@@ -162,10 +162,11 @@ footer {
 }
 
 .col-personajes a img{
-    background-color: white;
+    background-color: #A986AE;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 10px;
     border: 9px;
     border-color: #634368;
     border-style: solid;
@@ -226,11 +227,14 @@ footer {
     display: grid;
     justify-content:center;
 }
+
 .fila-items{
     margin-top: 40px;
-    width: 650px;
+    max-width: 650px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .col-items a img{
@@ -246,7 +250,8 @@ footer {
     text-decoration: none;
 }
 
- .col-items a{
+
+.col-items a{
      text-decoration: none;
  }
 
@@ -267,8 +272,10 @@ footer {
 }
 
 .col-items{
+    margin-bottom:30px;
     display: grid;
     justify-content: center;
+    width: 200px;
 }
 
 .sobre-nosotros{
@@ -291,6 +298,29 @@ footer {
     border-color: #634368;
     border-style: solid;
     border-radius:9px;
+}
+
+.estadisticas{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    
+}
+
+.estadistica{
+    display: flex;
+    width: 300px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.puntos img{
+    margin-right:8px;
+}
+
+.icon{
+    margin-right:16px;
+    margin-left:16px;
 }
 
 .texto-sobre-nosotros{
@@ -381,6 +411,8 @@ footer {
 .ficha-elemento{
     display: grid;
     justify-content: center;
+    padding:4px;
+
 }
 
 .info-elemento{
@@ -395,7 +427,7 @@ footer {
     display: grid;
     justify-content: center;
     width: 300px;
-    height: 300px;
+    height: 340px;
     text-align: center;
     font-family:VT323 ;  
     color: white;
@@ -416,7 +448,7 @@ footer {
     justify-content: center;
     align-items: center;
     width: 300px;
-    height: 300px;
+    height: 340px;
     font-family:VT323 ;  
     color: white;
     font-size: 30px;
@@ -482,6 +514,13 @@ footer {
     padding-top: 10px;
 }
 
+.caja-comentarios{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
 .mensaje{
         width: 600px;
         height: 100px;
@@ -498,7 +537,7 @@ footer {
     padding: 20px;
     align-items: center;
     display: grid;
-    justify-content: center;
+    justify-content: left;
     background-color: #E8E8E8;
     border: 9px;
     border-color: #E8E8E8;

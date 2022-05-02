@@ -14,9 +14,6 @@ public class ComentarioPersonaje {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "titulo", nullable = false, length = 100)
-    private String titulo;
-
     @Column(name = "fecha")
     private Timestamp fecha;
 
@@ -35,8 +32,7 @@ public class ComentarioPersonaje {
 
     }
     //TODO crear metodo que genera nombres aleatorios
-    public ComentarioPersonaje(String titulo, Timestamp fecha, String mensaje, String nombre) {
-        this.titulo = titulo;
+    public ComentarioPersonaje( Timestamp fecha, String mensaje, String nombre) {
         this.fecha = fecha;
         this.mensaje = mensaje;
         this.nombre = nombre;
@@ -48,14 +44,6 @@ public class ComentarioPersonaje {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 
     public Timestamp getFecha() {
@@ -89,5 +77,13 @@ public class ComentarioPersonaje {
                 // Locale generalmente no es necesario, se agrega en caso de que el sistema que ejecuta la aplicación
                 // tenga un lenguaje y país distinto al deseado (inglés p.ej.)
                 .format(getFecha());
+    }
+
+    public Personaje getPersonaje() {
+        return personaje;
+    }
+
+    public void setPersonaje(Personaje personaje) {
+        this.personaje = personaje;
     }
 }

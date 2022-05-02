@@ -13,16 +13,16 @@
 <body>
     <header>
         <nav>
-            <title>A project</title>            
+            <title>A project</title>
             <ul class="inicio">
-                <li class="logo"><a href="../../../../../vistasProjectA/index.html"><img src="imagenes/logoEyeBackground.png" width='88' height='70' alt="logo"></a></li>
-                <li class="logo"><a href="../../../../../vistasProjectA/index.html">Project</a></li>
+                <li class="logo"><a th:href="@{/}"><img th:src="@{imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
+                <li class="logo"><a th:href="@{/}">Project</a></li>
             </ul>
             <p class="vacio"></p>
             <ul class="menu">
-                <li class="elementos"><a href="../../../../../vistasProjectA/sobre-nosotros.html">Sobre nosotros</a></li>
+                <li class="elementos"><a th:href="@{/sobre-nosotros}">Sobre nosotros</a></li>
                 <li class="elementos"><a>|</a></li>
-                <li class="elementos"><a href="../../../../../vistasProjectA/faq.html">FAQ</a></li>
+                <li class="elementos"><a th:href="@{/faq}">FAQ</a></li>
             </ul>
         </nav>
     </header>
@@ -36,8 +36,46 @@
                 </div>
                 <div class="stats-ficha-elemento">
                     <p>Estadisticas</p>
-                    <img src="imagenes/blockstats.png" width='250' height='200'alt="personaje">
-                </div>                
+                    <div class="estadisticas">
+                    <div class="estadistica">
+                        <img class="icon" th:src="@{imagenes/estadisticas/vidaIcon.png}" width="32" height="32">
+                    <div class="puntos" th:each="vida:${vidas}">
+                        <img th:src="@{imagenes/estadisticas/vidaDot.png}"  width="16">
+                    </div>
+                    </div>
+                    <div class="estadistica">
+                        <img class="icon" th:src="@{imagenes/estadisticas/danoIcon.png}" width="32" height="32">
+                        <div class="puntos" th:each="dano:${danos}">
+                            <img th:src="@{imagenes/estadisticas/danoDot.png}"  width="16">
+                        </div>
+                    </div>
+                    <div class="estadistica">
+                        <img class="icon" th:src="@{imagenes/estadisticas/sigiloIcon.png}" width="32" height="32">
+                        <div class="puntos" th:each="sigilo:${sigilos}">
+                            <img th:src="@{imagenes/estadisticas/sigiloDot.png}"  width="16">
+                        </div>
+                    </div>
+                    <div class="estadistica">
+                        <img class="icon" th:src="@{imagenes/estadisticas/velocidadIcon.png}" width="32" height="32">
+                        <div class="puntos" th:each="velocidad:${velocidades}">
+                            <img th:src="@{imagenes/estadisticas/velocidadDot.png}"  width="16">
+                        </div>
+                    </div>
+                    <div class="estadistica">
+                        <img class="icon" th:src="@{imagenes/estadisticas/resistenciaIcon.png}" width="32" height="32">
+                        <div class="puntos" th:each="armadura:${armaduras}">
+                            <img th:src="@{imagenes/estadisticas/resistenciaPunto.png}"  width="16">
+                        </div>
+                    </div>
+                    <div class="estadistica">
+                        <img class="icon" th:src="@{imagenes/estadisticas/intelgenciaIcon.png}" width="32" height="32">
+                        <div class="puntos" th:each="evasion:${evasiones}">
+                            <img th:src="@{imagenes/estadisticas/inteligenciaDot.png}"  width="16">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
             </div>
             <div class="descripcion-ficha">
                 <h2>Descripcion</h2>
@@ -47,21 +85,22 @@
             <div class="seccion-comentarios">
                 <div class="titulo-comentario">
                     <h1>Comentarios</h1>
-                </div> 
+                </div>
+                <form class="caja-comentarios" th:action="@{/personaje/nuevo-comentario}" method="post" >
                 <div class="formulario-comentario">
+                    <input type="hidden" name="personaje" th:value="${personaje.getId()}">
                     <textarea class="mensaje" name="mensaje" placeholder="Únete a la discusión..."></textarea>
                 </div>
-                <input type="image" class="subir-comentario" name="subirComentarioButton" src="imagenes/subirComentarioButton.png" width="200" alt="subir comentario">
+                    <input type="image" class="subir-comentario" th:src="@{imagenes/subirComentarioButton.png}" alt="submit" width="200">
+                </form>
+
                 <p class="separacion"></p>
+                <div th:each="comentario:${comentarios}">
                 <div class="comentario">
-                    <p class="nombre-usuario"> Jugador X</p>
-                    <p class="fecha"> Marzo 03 - 2022</p>
-                    <p class="texto-comentario">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis risus non diam dictum placerat. In gravida erat neque, vitae sagittis metus tincidunt vitae.</p>
+                    <p class="nombre-usuario" th:text="${comentario.getNombre()}"></p>
+                    <p class="fecha" th:text="${comentario.getFecha()}"></p>
+                    <p class="texto-comentario" th:text="${comentario.getMensaje()}"></p>
                 </div>
-                <div class="comentario">
-                    <p class="nombre-usuario"> Jugador X</p>
-                    <p class="fecha"> Marzo 03 - 2022</p>
-                    <p class="texto-comentario">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis risus non diam dictum placerat. In gravida erat neque, vitae sagittis metus tincidunt vitae.</p>
                 </div>
                 <p class="separacion"></p>
             </div>

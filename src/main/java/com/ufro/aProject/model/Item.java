@@ -1,7 +1,6 @@
 package com.ufro.aProject.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 
 @Entity
 public class Item {
@@ -52,4 +51,14 @@ public class Item {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+
 }

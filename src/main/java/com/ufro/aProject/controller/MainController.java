@@ -11,4 +11,14 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/sobre-nosotros")
+    public String sobreNosotros(){
+        return "sobre-nosotros";
+    }
+
+    @RequestMapping("/faq")
+    public String faq(){
+        return "faq";
+    }
+
 }

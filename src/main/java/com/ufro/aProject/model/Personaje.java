@@ -31,7 +31,7 @@ public class Personaje {
     private int velocidad;
 
     @Column(name = "armadura", nullable = false)
-    private int enfriamiento;
+    private int armadura;
 
     @Column(name = "evasion", nullable = false)
     private int evasion;
@@ -51,13 +51,13 @@ public class Personaje {
     public Personaje() {
     }
 
-    public Personaje(String nombre, String descripcion, int vida, int daño, int velocidad, int enfriamiento, int evasion, int sigilo, List<Habilidad> habilidades) {
+    public Personaje(String nombre, String descripcion, int vida, int daño, int velocidad, int armadura, int evasion, int sigilo, List<Habilidad> habilidades) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.vida = vida;
         this.daño = daño;
         this.velocidad = velocidad;
-        this.enfriamiento = enfriamiento;
+        this.armadura = armadura;
         this.evasion = evasion;
         this.sigilo = sigilo;
         this.habilidades = habilidades;
@@ -111,12 +111,12 @@ public class Personaje {
         this.velocidad = velocidad;
     }
 
-    public int getEnfriamiento() {
-        return enfriamiento;
+    public int getArmadura() {
+        return armadura;
     }
 
-    public void setEnfriamiento(int enfriamiento) {
-        this.enfriamiento = enfriamiento;
+    public void setArmadura(int armadura) {
+        this.armadura = armadura;
     }
 
     public int getEvasion() {
