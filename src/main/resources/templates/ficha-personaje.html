@@ -50,18 +50,6 @@
                         </div>
                     </div>
                     <div class="estadistica">
-                        <img class="icon" th:src="@{imagenes/estadisticas/sigiloIcon.png}" width="32" height="32">
-                        <div class="puntos" th:each="sigilo:${sigilos}">
-                            <img th:src="@{imagenes/estadisticas/sigiloDot.png}"  width="16">
-                        </div>
-                    </div>
-                    <div class="estadistica">
-                        <img class="icon" th:src="@{imagenes/estadisticas/velocidadIcon.png}" width="32" height="32">
-                        <div class="puntos" th:each="velocidad:${velocidades}">
-                            <img th:src="@{imagenes/estadisticas/velocidadDot.png}"  width="16">
-                        </div>
-                    </div>
-                    <div class="estadistica">
                         <img class="icon" th:src="@{imagenes/estadisticas/resistenciaIcon.png}" width="32" height="32">
                         <div class="puntos" th:each="armadura:${armaduras}">
                             <img th:src="@{imagenes/estadisticas/resistenciaPunto.png}"  width="16">
@@ -73,6 +61,18 @@
                             <img th:src="@{imagenes/estadisticas/inteligenciaDot.png}"  width="16">
                         </div>
                     </div>
+                        <div class="estadistica">
+                            <img class="icon" th:src="@{imagenes/estadisticas/velocidadIcon.png}" width="32" height="32">
+                            <div class="puntos" th:each="velocidad:${velocidades}">
+                                <img th:src="@{imagenes/estadisticas/velocidadDot.png}"  width="16">
+                            </div>
+                        </div>
+                        <div class="estadistica">
+                            <img class="icon" th:src="@{imagenes/estadisticas/sigiloIcon.png}" width="32" height="32">
+                            <div class="puntos" th:each="sigilo:${sigilos}">
+                                <img th:src="@{imagenes/estadisticas/sigiloDot.png}"  width="16">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
