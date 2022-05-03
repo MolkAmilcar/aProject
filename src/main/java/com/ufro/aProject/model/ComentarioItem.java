@@ -28,8 +28,8 @@ public class ComentarioItem {
 
     //constructores, getters y setters
     public ComentarioItem() {
-
     }
+
     //TODO crear metodo que genera nombres aleatorios
     public ComentarioItem(Timestamp fecha, String mensaje, String nombre) {
         this.fecha = fecha;

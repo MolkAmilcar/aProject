@@ -4,7 +4,7 @@
 }
 
 nav{ 
-    wclassth:100%;
+    width:100%;
     background-color: #4D4D4D;
     display: flex;
     justify-content:space-between; 
