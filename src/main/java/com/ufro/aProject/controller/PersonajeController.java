@@ -16,6 +16,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Optional;
 
+/**
+ * Esta controlador está encargado de controlar y mostrar las paginas y redireccionar a las paginas relacionadas a las personajes.
+ *
+ * @author Isidora Albayay
+ */
 @Controller
 public class PersonajeController {
 
@@ -28,12 +33,22 @@ public class PersonajeController {
     @Autowired
     private NombreRepository nombreRepository;
 
+    /**
+     * Este metodo muestra una vista con el listado del total de personajes registrados.
+     * @return Devuelve el archivo con la vista del listado total de personajes.
+     * */
     @RequestMapping("/personajes")
     public String index(Model model){
         model.addAttribute("personajes", personajeRepository.findAll());
         return "personajes";
     }
 
+    /**
+     * Este metodo muestra la vista detallada del Personaje correspondiente al seleccionar un Personaje del listado de personajes.
+     * @param id EL número identificador del Personaje.
+     * @param model
+     * @return Devuelve el archivo con la vista del detalle del Personaje específico.
+     * */
     @GetMapping("/personaje")
     public String fichaPersonaje(@RequestParam(value="id") Long id, Model model){
         Optional<Personaje> personaje=personajeRepository.findById(id);
@@ -80,6 +95,11 @@ public class PersonajeController {
         return "ficha-personaje";
     }
 
+    /**
+     * Este metodo genera e incorpora un nuevo comentario a la vista de detalle del Personaje.
+     * @param comentarioPersonaje EL Comentario correspondiente al Personaje.
+     * @return Devuelve un redireccionamiento al Personaje correspondiente con su nuevo de Comentario.
+     * */
     @PostMapping("/personaje/nuevo-comentario")
     public String nuevoComentarioPersonaje(@ModelAttribute ComentarioPersonaje comentarioPersonaje){
         Date date = new Date();
@@ -90,6 +110,10 @@ public class PersonajeController {
         return "redirect:/personaje?id="+comentarioPersonaje.getPersonaje().getId();
     }
 
+    /**
+     * Este metodo genera un nombre aleatorio en base a los nombres registrados para el Comentario.
+     * @return Devuelve la cadena del nombre aleatorio.
+     * */
     public String generarNombreComentario(){
         String nombreUsuario;
         ArrayList<Nombre> nombres = (ArrayList<Nombre>) nombreRepository.findAll();
