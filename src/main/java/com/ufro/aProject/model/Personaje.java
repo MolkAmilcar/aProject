@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Esta clase se emplea para determinar las características y valores de los atributos de un Item.
  *
- * @author Amilcar Celis Aguilar
+ * @author Amilcar Celis, Isidora Albayay
  */
 
 @Entity

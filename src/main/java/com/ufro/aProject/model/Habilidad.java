@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * Esta clase almacena corresponde a las habilidades con las que los personajes cuentan y muestran en su detalle de personaje.
  *
- * @author Amilcar Celis Aguilar
+ * @author Amilcar Celis
  */
 
 @Entity

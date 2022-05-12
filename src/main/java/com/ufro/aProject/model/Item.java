@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * Esta clase contiene el detalle de los objetos "Items" que serán mostrados por la aplicación.
  *
- * @author Amilcar Celis Aguilar
+ * @author Amilcar Celis
  */
 
 @Entity

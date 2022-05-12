@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * Esta clase contiene los datos de los moderadores de la página.
  *
- * @author Amilcar Celis Aguilar
+ * @author Amilcar Celis, Isidora Albayay
  */
 @Entity
 public class Moderador {

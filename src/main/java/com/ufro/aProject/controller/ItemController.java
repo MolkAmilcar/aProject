@@ -19,7 +19,7 @@ import java.util.Optional;
 /**
  * Esta controlador está encargado de controlar y mostrar los detalles de item.
  *
- * @author Isidora Albayay Valenzuela
+ * @author Isidora Albayay
  */
 @Controller
 public class ItemController {

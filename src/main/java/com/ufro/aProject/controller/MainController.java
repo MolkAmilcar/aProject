@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * Esta controlador está encargado de controlar y mostrar la pagina inicial del proyecto.
  *
- * @author Isidora Albayay Valenzuela
+ * @author Isidora Albayay
  */
 @Controller
 public class MainController {

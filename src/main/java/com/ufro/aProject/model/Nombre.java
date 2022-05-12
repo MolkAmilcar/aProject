@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * Esta clase se emplea para contener y generar nombres aleatorios para los comentarios.
  *
- * @author Amilcar Celis Aguilar
+ * @author Amilcar Celis, Isidora Albayay
  */
 
 @Entity
