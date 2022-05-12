@@ -6,7 +6,7 @@ import java.text.DateFormat;
 import java.util.Locale;
 
 /**
- * Esta clase almacena contiene y almacena la información de los comentarios correspondientes a los personajes.
+ * Esta clase contiene y almacena la información de los comentarios correspondientes a los personajes.
  *
  * @author Amilcar Celis, Isidora Albayay
  */

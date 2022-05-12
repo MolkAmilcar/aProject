@@ -4,7 +4,7 @@ import com.ufro.aProject.model.ComentarioPersonaje;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * Este repositorio se encargade vincular los comentarios de personajes a los almacenados en la base de datos.
+ * Este repositorio se encarga de vincular los comentarios de personajes a los almacenados en la base de datos.
  *
  * @author Isidora Albayay
  */
