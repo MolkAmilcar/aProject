@@ -8,7 +8,7 @@ import java.util.Locale;
 /**
  * Esta clase almacena contiene y almacena la información de los comentarios correspondientes a los personajes.
  *
- * @author Isidora Albayay
+ * @author Amilcar Celis, Isidora Albayay
  */
 
 @Entity
