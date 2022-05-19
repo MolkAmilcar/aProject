@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"/>
 <head>
     <link rel="stylesheet" th:href="@{/style.css}">
     <meta charset="UTF-8">
@@ -25,19 +26,18 @@
         </ul>
     </nav>
 </header>
-
     <div class="cuerpo">
-        <div class="items">
-            <p class="relleno"></p>   
-            <div class="contenido-items">
-                <div class="titulo-items"> 
-                    <h1>Items</h1>
+        <div class="personajes">
+            <p class="relleno"></p>
+            <div class="contenido-personajes">
+                <div class="titulo-personajes">
+                    <h1>Personajes</h1>
                 </div>
-                <div class="listado-items">
-                    <div class="fila-items">
-                        <div class="col-items" th:each="item:${items}">
-                            <a th:href="@{/moderador/item(id= ${item.getId()})}"><img th:src="${item.getImagen()}"  width="150" height="150" name="whatever"></a>
-                            <a th:href="@{/moderador/item(id= ${item.getId()})}"><p th:text="${item.getNombre()}"></p></a>
+                <div class="listado-personajes">
+                    <div class="fila-personajes" >
+                        <div class="col-personajes" th:each="personaje:${personajes}">
+                            <a th:href="@{/moderador/personaje(id= ${personaje.getId()})}"><img th:src="${personaje.getImagen()}"  width="150" height="150" name="whatever"></a>
+                            <a th:href="@{/moderador/personaje(id= ${personaje.getId()})}"><p th:text="${personaje.getNombre()}"></p></a>
                         </div>
                     </div>
                 </div>
@@ -52,9 +52,9 @@
             <a href="#"><img src="/imagenes/instagramIcon.png" class="socials" width='30' height='30' name='whatever'></a>
             <a href="#"><img src="/imagenes/facebookIcon.png" class="socials" width='30' height='30' name='whatever'></a>
             <a href="#"><img src="/imagenes/twitterIcon.png" class="socials" width='30' height='30' name='whatever'></a>
-            <a href="#"><img src="/imagenes/facebookIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="/imagenes/youtubeIcon.png" class="socials" width='30' height='30' name='whatever'></a>
         </ul>
-        <p></p>        
+        <p></p>
         <input type='image' class="download" src='/imagenes/descargarIcon.png' height="40" name='whatever' value='submit' />
     </footer>
 

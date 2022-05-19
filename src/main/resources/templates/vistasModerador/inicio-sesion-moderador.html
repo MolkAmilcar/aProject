@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" th:href="@{/style.css}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href=' http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="centeredLayout.css">
-    <link rel="stylesheet" href="style.css">
+    <link href=" http://fonts.googleapis.com/css?family=VT323" rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <header>
-        <nav>
-            <title>A project</title>            
-            <ul class="inicio">
-                <li class="logo"><a href="#"><img src="imagenes/logoEyeBackground.png" wclassth='88' height='70'alt="logo"></a></li>
-                <li class="logo"><a href="#">Project</a></li>
-            </ul>
-            <p class="vacio"></p>
-            <ul class="menu">
-                <li class="elementos"><a href="#">Sobre nosotros</a></li>
-                <li class="elementos"><a>|</a></li>
-                <li class="elementos"><a href="#">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <title>A project</title>
+        <ul class="inicio">
+            <li class="logo"><a th:href="@{/moderador}"><img th:src="@{/imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
+            <li class="logo"><a th:href="@{/moderador}">Project</a></li>
+        </ul>
+        <p class="vacio"></p>
+        <ul class="menu">
+            <li class="elementos"><a th:href="@{/moderador/sobre-nosotros}">Sobre nosotros</a></li>
+            <li class="elementos"><a>|</a></li>
+            <li class="elementos"><a th:href="@{/moderador/faq}">FAQ</a></li>
+        </ul>
+    </nav>
+</header>
 
    
         <div class="moderatorLogin">
@@ -36,21 +35,33 @@
             <br>
             <div class="centeredLogin">
                     <div class="card-body">
-                        <form>
+                        <form action="/perform_login" method="post" class="form-signin">
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <div class="purpleOutline"><input type="email" class="form-control" class="exampleInputEmail1" class="purpleOutline"></div>
+                            <div class="purpleOutline"><input type="text" id="username" name="username" class="form-control exampleInputEmail1 purpleOutline"></div>
                             </div>
                             <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label" class="text">Password</label>
+                            <label for="exampleInputPassword1" class="form-label text" >Password</label>
                             <div class="purpleOutline">
-                                <input type="password" class="form-control" class="exampleInputPassword1">
+                                <input type="password" id="password" name="password" class="exampleInputPassword1 form-control">
                             </div>
                             </div>
-                            <a href="index-moderador.html"><img src="imagenes/iniciaSesion.png" wclassth='150' alt="elemento"></a>
+                            <button type="submit" >enviar</button>
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
                         </form>
                     </div>
             </div>
         </div>
+
+    <footer>
+        <ul>
+            <a href="#"><img src="/imagenes/instagramIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="/imagenes/facebookIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="/imagenes/twitterIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="/imagenes/youtubeIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+        </ul>
+        <p></p>
+        <input type='image' class="download" src='/imagenes/descargarIcon.png' height="40" name='whatever' value='submit' />
+    </footer>
 </body>
 </html>

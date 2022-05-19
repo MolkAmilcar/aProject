@@ -32,9 +32,12 @@
                 <a href="index.html"><img th:src="@{imagenes/logoEyeBackground.png}"  width="199.86" height="160" alt="logo"></a>
                 <a href="index.html">Project</a>            
             </div>
+            <form th:action="@{/buscar-elemento}" method="get" >
             <div class="form-outline">
-                <input type="search" id="form1" class="form-control" placeholder="Buscar..." aria-label="Search"/>
+                <input type="text" id="form1" class="form-control" name="texto"  placeholder="Buscar..." aria-label="Search" />
+                <input type="submit" class="buscarButton"  height="38">
             </div>
+            </form>
             <div class="filtros">
                 <a th:href="@{/personajes}"><img th:src="@{imagenes/personajeButton.png}" width="283" height="40" name="whatever"></a>
                 <a th:href="@{/items}"><img th:src="@{imagenes/itemsButton.png}"  width="283" height="40" name="whatever"></a>
@@ -43,13 +46,13 @@
     </div>
     <footer>
         <ul>
-            <a href="#"><img th:src="@{imagenes/instagramIcon.png}" class="socials" width="30" height="30" name="whatever"></a>
-            <a href="#"><img th:src="@{imagenes/facebookIcon.png}" class="socials" width="30" height="30" name="whatever"></a>
-            <a href="#"><img th:src="@{imagenes/twitterIcon.png}" class="socials" width="30" height="30" name="whatever"></a>
-            <a href="#"><img th:src="@{imagenes/facebookIcon.png}" class="socials" width="30" height="30" name="whatever"></a>
+            <a href="#"><img src="imagenes/instagramIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="imagenes/facebookIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="imagenes/twitterIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="imagenes/youtubeIcon.png" class="socials" width='30' height='30' name='whatever'></a>
         </ul>
-        <p></p>        
-        <input type="image" class="download" th:src="@{imagenes/descargarIcon.png}"height="40" name="whatever" value="submit" />
+        <p></p>
+        <input type='image' class="download" src='imagenes/descargarIcon.png' height="40" name='whatever' value='submit' />
     </footer>
 </body>
 </html>

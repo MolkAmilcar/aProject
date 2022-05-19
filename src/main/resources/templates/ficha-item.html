@@ -45,7 +45,7 @@
                 </div>
                 <form class="caja-comentarios" th:action="@{/item/nuevo-comentario}" method="post" >
                     <div class="formulario-comentario">
-                        <input type="hidden" name="item" th:value="${item.getId()}">
+                        <input type="hidden" name="item" >
                         <textarea class="mensaje" name="mensaje" placeholder="Únete a la discusión..."></textarea>
                     </div>
                     <input type="image" class="subir-comentario" th:src="@{imagenes/subirComentarioButton.png}" alt="submit" width="200">
@@ -67,15 +67,14 @@
 
     <footer>
         <ul>
-            <a href="#"><img src="../imagenes/instagramIcon.png" class="socials" width='30' height='30' name='whatever'></a>
-            <a href="#"><img src="../imagenes/facebookIcon.png" class="socials" width='30' height='30' name='whatever'></a>
-            <a href="#"><img src="../imagenes/twitterIcon.png" class="socials" width='30' height='30' name='whatever'></a>
-            <a href="#"><img src="../imagenes/facebookIcon.png" class="socials" width='30' height='30' name='whatever'></a>
-        </ul>   
-        <p></p>        
-        <input type='image' class="download" src='../imagenes/descargarIcon.png' height="40" name='whatever' value='submit' />
+            <a href="#"><img src="imagenes/instagramIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="imagenes/facebookIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="imagenes/twitterIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="imagenes/youtubeIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+        </ul>
+        <p></p>
+        <input type='image' class="download" src='imagenes/descargarIcon.png' height="40" name='whatever' value='submit' />
     </footer>
-
 </body>
 </body>
 </html>

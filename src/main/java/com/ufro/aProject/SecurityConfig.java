@@ -14,18 +14,18 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    String[] resources = {"/**"};
+    String[] resources = {"/style.css","/imagenes/**"};
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
                     .antMatchers(resources).permitAll()
-                    .antMatchers("/**").permitAll()
+                    .antMatchers("/","/faq", "/item**","/personaje**","/index","/items","/personajes","/sobre-nosotros","/resultados-busqueda**").permitAll()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
-                    .loginPage("/")
+                    .loginPage("/login")
                     .loginProcessingUrl("/perform_login")
                     .permitAll()
                     .and()

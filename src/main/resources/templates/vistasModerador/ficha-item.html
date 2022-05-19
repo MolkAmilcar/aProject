@@ -27,24 +27,37 @@
 </header>
 
     <div class="cuerpo">
-        <div class="items">
-            <p class="relleno"></p>   
-            <div class="contenido-items">
-                <div class="titulo-items"> 
-                    <h1>Items</h1>
+        <div class="ficha-elemento">
+            <div class="info-elemento">
+                <div class="img-ficha-elemento">
+                    <img th:src="${item.getImagen()}" width='200' height='200'alt="elemento">
+                    <p th:text="${item.getNombre()}"></p>
                 </div>
-                <div class="listado-items">
-                    <div class="fila-items">
-                        <div class="col-items" th:each="item:${items}">
-                            <a th:href="@{/moderador/item(id= ${item.getId()})}"><img th:src="${item.getImagen()}"  width="150" height="150" name="whatever"></a>
-                            <a th:href="@{/moderador/item(id= ${item.getId()})}"><p th:text="${item.getNombre()}"></p></a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-            <p class="relleno"></p>
-        </div>    
+            <div class="descripcion-ficha">
+                <h2>Descripción</h2>
+                <p th:text="${item.getDescripcion()}"></p>
+            </div>
+
+            <div class="seccion-comentarios">
+                <div class="titulo-comentario">
+                    <h1>Comentarios</h1>
+                </div>
+                <p class="separacion"></p>
+                <div th:each="comentario:${comentarios}">
+                    <form class="caja-comentarios" th:action="@{/moderador/item/eliminar-comentario(id= ${comentario.getId()})}" method="post" >
+                    <div class="comentario">
+                        <p class="nombre-usuario" th:text="${comentario.getNombre()}"></p>
+                        <p class="fecha" th:text="${comentario.getFecha()}"></p>
+                        <p class="texto-comentario" th:text="${comentario.getMensaje()}"></p>
+                        <input type="image" class="eliminar-comentario" name="eliminarComentarioButton" alt="submit" src="/imagenes/eliminarButton.png" width="150">
+                    </div>
+                    </form>
+                </div>
+                <p class="separacion"></p>
+            </div>
+        </div>       
+                
     </div>
 
     <footer>
@@ -52,9 +65,9 @@
             <a href="#"><img src="/imagenes/instagramIcon.png" class="socials" width='30' height='30' name='whatever'></a>
             <a href="#"><img src="/imagenes/facebookIcon.png" class="socials" width='30' height='30' name='whatever'></a>
             <a href="#"><img src="/imagenes/twitterIcon.png" class="socials" width='30' height='30' name='whatever'></a>
-            <a href="#"><img src="/imagenes/facebookIcon.png" class="socials" width='30' height='30' name='whatever'></a>
+            <a href="#"><img src="/imagenes/youtubeIcon.png" class="socials" width='30' height='30' name='whatever'></a>
         </ul>
-        <p></p>        
+        <p></p>
         <input type='image' class="download" src='/imagenes/descargarIcon.png' height="40" name='whatever' value='submit' />
     </footer>
 

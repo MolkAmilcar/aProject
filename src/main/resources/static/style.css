@@ -82,6 +82,7 @@ footer {
 
 
 .form-outline{
+    display: flex;
     width: 777px;
     border: 9px;
     border-color: #634368;
@@ -89,8 +90,14 @@ footer {
     border-radius:9px;
 }
 
+.buscarButton{
+    background-color: #A986AE;
+    padding: 3px;
+}
+
 .form-control{      
-    font-family: VT323; 
+    font-family: VT323;
+
 }
 
 .cuerpo-inicio {
@@ -566,4 +573,32 @@ footer {
 
 .separacion{
     margin: 20px;
+}
+
+.moderatorLogin{
+    background-color: #414141;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='%23575757' fill-opacity='0.4'%3E%3Cpath d='M12 0h18v6h6v6h6v18h-6v6h-6v6H12v-6H6v-6H0V12h6V6h6V0zm12 6h-6v6h-6v6H6v6h6v6h6v6h6v-6h6v-6h6v-6h-6v-6h-6V6zm-6 12h6v6h-6v-6zm24 24h6v6h-6v-6z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    min-height: calc(100vh - 218px);
+    justify-content: center;
+    color: white;
+    font-family: VT323;
+}
+
+.centeredLogin{
+    background-color:#4D4D4D;
+    border-radius: 5px;
+    width:26%;
+    text-align:center;
+    padding:2px;
+    margin:0 auto;
+}
+
+.centeredTitle{
+    background-color:#634368;
+    border-radius: 5px;
+    width:40%;
+    text-align:center;
+    padding:2px;
+    margin:0 auto;
+    margin-top: 10%;
 }
