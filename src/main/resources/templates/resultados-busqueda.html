@@ -14,8 +14,8 @@
         <nav>
             <title>A project</title>
             <ul class="inicio">
-                <li class="logo"><a th:href="@{/static}"><img th:src="@{imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
-                <li class="logo"><a th:href="@{/static}">Project</a></li>
+                <li class="logo"><a th:href="@{/}"><img th:src="@{imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
+                <li class="logo"><a th:href="@{/}">Project</a></li>
             </ul>
             <p class="vacio"></p>
             <ul class="menu">
@@ -29,14 +29,6 @@
     <div class="cuerpo">
         <div class="items">
             <p class="relleno"></p>
-            <div class="listado-personajes">
-                <div class="fila-personajes" >
-                    <div class="col-personajes" th:each="personaje:${personajes}">
-                        <a th:href="@{/personaje(id= ${personaje.getId()})}"><img th:src="${personaje.getImagen()}"  width="150" height="150" name="whatever"></a>
-                        <a th:href="@{/personaje(id= ${personaje.getId()})}"><p th:text="${personaje.getNombre()}"></p></a>
-                    </div>
-                </div>
-            </div>
             <div class="contenido-items">
                 <div class="titulo-items"> 
                     <h1>Resultados de búsqueda</h1>
@@ -47,11 +39,17 @@
                             <a th:href="@{/item(id= ${item.getId()})}"><img th:src="${item.getImagen()}"  width="150" height="150" name="whatever"></a>
                             <a th:href="@{/item(id= ${item.getId()})}"><p th:text="${item.getNombre()}"></p></a>
                         </div>
+                        <div class="col-personajes" th:each="personaje:${personajes}">
+                            <a th:href="@{/personaje(id= ${personaje.getId()})}"><img th:src="${personaje.getImagen()}"  width="150" height="150" name="whatever"></a>
+                            <a th:href="@{/personaje(id= ${personaje.getId()})}"><p th:text="${personaje.getNombre()}"></p></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <p class="relleno"></p>
-        </div>    
+        </div>
+
+
     </div>
 
     <footer>

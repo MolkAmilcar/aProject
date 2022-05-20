@@ -130,4 +130,11 @@ public class ModeradorController {
         return "redirect:/moderador/personaje?id="+idItem;
     }
 
+    @GetMapping ("/buscar-elemento")
+    public String busqueda(@RequestParam(value="texto") String texto, Model model){
+        model.addAttribute("personajes", personajeRepository.searchByNombreLike(texto));
+        model.addAttribute("items", itemRepository.searchByNombreLike(texto));
+        return "vistasModerador/resultados-busqueda-moderador";
+    }
+
 }

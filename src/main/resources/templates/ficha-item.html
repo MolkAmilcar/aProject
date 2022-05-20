@@ -45,8 +45,8 @@
                 </div>
                 <form class="caja-comentarios" th:action="@{/item/nuevo-comentario}" method="post" >
                     <div class="formulario-comentario">
-                        <input type="hidden" name="item" >
-                        <textarea class="mensaje" name="mensaje" placeholder="Únete a la discusión..."></textarea>
+                        <input type="hidden" name="item" th:value="${item.getId()}" >
+                        <textarea class="mensaje" name="mensaje" placeholder="Únete a la discusión..." required></textarea>
                     </div>
                     <input type="image" class="subir-comentario" th:src="@{imagenes/subirComentarioButton.png}" alt="submit" width="200">
                 </form>

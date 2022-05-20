@@ -29,15 +29,18 @@
 <div class="cuerpo">
     <div class="cuerpo-inicio">
         <div class="logo-inicio">
-            <a href="index.html"><img th:src="@{/imagenes/logoEyeBackground.png}"  width="199.86" height="160" alt="logo"></a>
+            <a href="index.html"><img th:src="@{imagenes/logoEyeBackground.png}"  width="199.86" height="160" alt="logo"></a>
             <a href="index.html">Project</a>
         </div>
-        <div class="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Buscar..." aria-label="Search"/>
-        </div>
+        <form th:action="@{/moderador/buscar-elemento}" method="get" >
+            <div class="form-outline">
+                <input type="text" id="form1" class="form-control" name="texto"  placeholder="Buscar..." aria-label="Search" required />
+                <input type="submit" class="buscarButton" value="Buscar"  height="38">
+            </div>
+        </form>
         <div class="filtros">
-            <a th:href="@{/moderador/personajes}"><img th:src="@{/imagenes/personajeButton.png}" width="283" height="40" name="whatever"></a>
-            <a th:href="@{/moderador/items}"><img th:src="@{/imagenes/itemsButton.png}"  width="283" height="40" name="whatever"></a>
+            <a th:href="@{/moderador/personajes}"><img th:src="@{imagenes/personajeButton.png}" width="283" height="40" name="whatever"></a>
+            <a th:href="@{/moderador/items}"><img th:src="@{imagenes/itemsButton.png}"  width="283" height="40" name="whatever"></a>
         </div>
     </div>
 </div>
