@@ -19,9 +19,9 @@
         </ul>
         <p class="vacio"></p>
         <ul class="menu">
-            <li class="elementos"><a th:href="@{/moderador/sobre-nosotros}">Sobre nosotros</a></li>
-            <li class="elementos"><a>|</a></li>
-            <li class="elementos"><a th:href="@{/moderador/faq}">FAQ</a></li>
+            <form th:action="@{/logout}" method="post">
+                <li class="elementos"> <button type="submit">Cerrar sesión</button></li>
+            </form>
         </ul>
     </nav>
 </header>

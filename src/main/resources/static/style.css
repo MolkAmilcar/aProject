@@ -47,6 +47,19 @@ nav{
     text-align: center;
 }
 
+.menu button{
+    text-decoration: none;
+    color:white;
+    font-family: VT323;
+    text-align: center;
+    background:none;
+    border:none;
+}
+
+.menu button:hover{
+    color:#2353BB;
+}
+
 footer {
     width:100%;
     display: inline-flex;
@@ -523,6 +536,8 @@ footer {
     padding-top: 10px;
 }
 
+
+
 .caja-comentarios{
     display: flex;
     flex-direction: column;
@@ -578,10 +593,11 @@ footer {
 }
 
 .moderatorLogin{
+    display: flex;
+    flex-direction: column;
     background-color: #414141;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='%23575757' fill-opacity='0.4'%3E%3Cpath d='M12 0h18v6h6v6h6v18h-6v6h-6v6H12v-6H6v-6H0V12h6V6h6V0zm12 6h-6v6h-6v6H6v6h6v6h6v6h6v-6h6v-6h6v-6h-6v-6h-6V6zm-6 12h6v6h-6v-6zm24 24h6v6h-6v-6z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
     min-height: calc(100vh - 218px);
-    justify-content: center;
     color: white;
     font-family: VT323;
 }
@@ -602,5 +618,5 @@ footer {
     text-align:center;
     padding:2px;
     margin:0 auto;
-    margin-top: 10%;
+    margin-top:5%;
 }

@@ -35,7 +35,7 @@
             <form th:action="@{/buscar-elemento}" method="get" >
             <div class="form-outline">
                 <input type="text" id="form1" class="form-control" name="texto"  placeholder="Buscar..." aria-label="Search" required />
-                <input type="submit" class="buscarButton" value="Buscar" height="38">
+                <input type="image" th:src="@{imagenes/subirComentarioButton.png}" class="buscarButton" value="Buscar" alt="submit" height="38">
             </div>
             </form>
             <div class="filtros">
@@ -52,7 +52,8 @@
             <a href="#"><img src="imagenes/youtubeIcon.png" class="socials" width='30' height='30' name='whatever'></a>
         </ul>
         <p></p>
-        <input type='image' class="download" src='imagenes/descargarIcon.png' height="40" name='whatever' value='submit' />
+        <a href="descarga/gif.gif" download><img class="download" src='imagenes/descargarIcon.png' height="40"></a>
+
     </footer>
 </body>
 </html>

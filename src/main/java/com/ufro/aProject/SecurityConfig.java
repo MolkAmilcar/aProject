@@ -14,7 +14,20 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    String[] resources = {"/style.css","/imagenes/**"};
+    String[] resources = {"/style.css","/imagenes/**","/descarga/**"};
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Autowired
+    private UserDetailsService userDetails;
+
+    @Override
+    protected  void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .userDetailsService(userDetails)
+                .passwordEncoder(bCryptPasswordEncoder);
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -26,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .formLogin()
                     .loginPage("/login")
+                    .defaultSuccessUrl("/moderador")
                     .loginProcessingUrl("/perform_login")
                     .permitAll()
                     .and()
@@ -34,5 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll();
     }
 
-
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }
