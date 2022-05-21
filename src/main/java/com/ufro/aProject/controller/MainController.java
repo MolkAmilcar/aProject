@@ -8,6 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Esta controlador está encargado de manejar y mostrar la pagina inicial del proyecto.
+ *
+ * @author Isidora Albayay
+ */
+
 @Controller
 public class MainController {
 
@@ -17,21 +23,37 @@ public class MainController {
     @Autowired
     private ItemRepository itemRepository;
 
+    /**
+     * Este metodo se encarga de mostrar la página de inicio predeterminada.
+     * @return Devuelve la vista inicial (index) predeterminado del proyecto.
+     * */
     @RequestMapping("/")
     public String index(){
         return "index";
     }
 
+    /**
+     * Este metodo se encarga de mostrar la información de el apartado "sobre nosotros" del proyecto.
+     * @return Devuelve la vista con la información "sobre nosotros".
+     * */
     @RequestMapping("/sobre-nosotros")
     public String sobreNosotros(){
         return "sobre-nosotros";
     }
 
+    /**
+     * Este metodo se encarga de mostrar y responder las preguntas frecuentes del proyecto.
+     * @return Devuelve la vista con las preguntas frecuentes.
+     * */
     @RequestMapping("/faq")
     public String faq(){
         return "faq";
     }
 
+    /**
+     * Este metodo se encarga de mostrar la pantalla con el formulario de inicio de sesión del moderador.
+     * @return Devuelve la vista con el inicio de sesión para el moderador.
+     * */
     @RequestMapping("/login")
     public String login(){
         return "vistasModerador/inicio-sesion-moderador";
@@ -40,6 +62,10 @@ public class MainController {
 
     //Ojo cambios en vista INDEX y nueva vista resultados-busqueda
 
+    /**
+     * Este metodo se encarga de realizar la consulta del elemento que está siendo buscado.
+     * @return Devuelve la vista con el resultado de la busqueda.
+     * */
     @GetMapping ("/buscar-elemento")
         public String busqueda(@RequestParam(value="texto") String texto, Model model){
         model.addAttribute("personajes", personajeRepository.searchByNombreLike(texto));
