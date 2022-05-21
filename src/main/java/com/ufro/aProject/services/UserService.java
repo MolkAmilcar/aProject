@@ -12,6 +12,11 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Esta gestor de servicios se emplea para dar funcionamiento al servicio de inicio de sesión y validación de Moderador.
+ *
+ * @author Amilcar Celis, Isidora Albayay
+ */
 @Service
 public class UserService extends GenericServices<Moderador,Long> implements UserDetailsService{
 
@@ -19,6 +24,11 @@ public class UserService extends GenericServices<Moderador,Long> implements User
         super(repository);
     }
 
+    /**
+     * Metodo para validar y designar permisos a un Moderador en base a su nombre.
+     * @param nombre El nombre del Moderador a ser validado.
+     * @throws UsernameNotFoundException el nombre del Moderador no fue encontrado.
+     * */
     @Override
     public UserDetails loadUserByUsername(String nombre) throws UsernameNotFoundException {
         Moderador moderador = findByNombre(nombre);
@@ -38,6 +48,11 @@ public class UserService extends GenericServices<Moderador,Long> implements User
         }
     }
 
+    /**
+     * Metodo que retorna un Moderador resultado del llamado a una búsqueda por nombre.
+     * @param nombre El nombre del Moderador a ser buscado.
+     * @return Devuelve el Moderador coincidente con el nombre.
+     * */
     public Moderador findByNombre(String nombre) {
         return ((ModeradorRepository) repository).findByNombre(nombre);
     }

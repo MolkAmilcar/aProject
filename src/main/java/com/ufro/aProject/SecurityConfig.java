@@ -10,6 +10,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+/**
+ * Esta clase se especifica y delimita los diferentes niveles de acceso que tienen los tipos de usuarios de la pagina empleando Spring Security.
+ *
+ * @author Amilcar Celis, Isidora Albayay
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -22,6 +27,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetails;
 
+    /**
+     * En este método se sobreescribe y determina el proceso de autentificación de Moderador en base a su contraseña.
+     */
     @Override
     protected  void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
@@ -29,6 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(bCryptPasswordEncoder);
     }
 
+    /**
+     * Este método define las direcciones a las cuales los diferentes tipos de usuario tienen acceso,
+     * siendo para el usuario común, todas menos las de moderación, y para un Moderador, las correspondientes a moderación e inicio de sesión.
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

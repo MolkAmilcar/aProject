@@ -19,7 +19,7 @@ import java.util.Optional;
 /**
  * Esta controlador está encargado de manejar y mostrar las paginas y redireccionar a las paginas relacionadas a las personajes.
  *
- * @author Isidora Albayay
+ * @author Amilcar Celis, Isidora Albayay
  */
 @Controller
 public class PersonajeController {

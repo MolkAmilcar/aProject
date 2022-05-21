@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * Esta controlador está encargado de manejar y mostrar todos de elementos de la página a disposición de los moderadores e incluir sus características de moderación correspondientes.
+ *
+ * @author Amilcar Celis, Isidora Albayay
+ */
 @Controller
 @RequestMapping("/moderador")
 public class ModeradorController {
@@ -32,29 +37,50 @@ public class ModeradorController {
     @Autowired
     private ComentarioItemRepository comentarioItemRepository;
 
-
+    /**
+     * Este metodo se encarga de mostrar la página de inicio correspondiente al moderador.
+     * @return Devuelve la vista inicial (index) correspondiente al moderador.
+     * */
     @GetMapping
     public String indexModerador(){
         return "vistasModerador/index-moderador";
     }
 
+    /**
+     * Este metodo se encarga de mostrar la información de el apartado "sobre nosotros" del proyecto.
+     * @return Devuelve la vista con la información "sobre nosotros" correspondiente al moderador.
+     * */
     @RequestMapping("/sobre-nosotros")
     public String sobreNosotros(){
         return "vistasModerador/sobre-nosotros";
     }
 
+    /**
+     * Este metodo se encarga de mostrar y responder las preguntas frecuentes del proyecto.
+     * @return Devuelve la vista con las preguntas frecuentes correspondientes al moderador.
+     * */
     @RequestMapping("/faq")
     public String faq(){
         return "vistasModerador/faq";
     }
 
     //Personajes
+    /**
+     * Este metodo muestra una vista con el listado del total de personajes registrados a los que puede accededer un Moderador.
+     * @return Devuelve el archivo con la vista del listado total de personajes tiene acceso un Moderador.
+     * */
     @RequestMapping("/personajes")
     public String index(Model model){
         model.addAttribute("personajes", personajeRepository.findAll());
         return "vistasModerador/personajes";
     }
 
+    /**
+     * Este metodo muestra la vista detallada del Personaje correspondiente al seleccionar un Personaje del listado de personajes, junto a sus correspondientes herramientas de moderación.
+     * @param id EL número identificador del Personaje.
+     * @param model
+     * @return Devuelve el archivo con la vista del detalle del Personaje específico y las herramientas de moderación.
+     * */
     @GetMapping("/personaje")
     public String fichaPersonaje(@RequestParam(value="id") Long id, Model model){
         Optional<Personaje> personaje=personajeRepository.findById(id);
@@ -102,12 +128,21 @@ public class ModeradorController {
 
     }
 
+    /**
+     * Este metodo muestra una vista con el listado del total de items registrados a los que puede accededer un Moderador.
+     * @return Devuelve el archivo con la vista del listado total de items a los que tiene acceso un Moderador.
+     * */
     @GetMapping("/items")
     public String items(Model model){
         model.addAttribute("items", itemRepository.findAll());
         return "vistasModerador/items-moderador";
     }
 
+    /**
+     * Este metodo muestra la vista detallada del Item correspondiente al seleccionar un Item del listado de items correspondiente a un Moderador, junto a sus respectivas herramientas de moderación.
+     * @param id EL número identificador del Item.
+     * @return Devuelve el archivo con la vista del detalle del Item específico y las herramientas de moderación.
+     * */
     @GetMapping("/item")
     public String fichaItem(@RequestParam(value="id") Long id, Model model){
         Optional<Item> item =itemRepository.findById(id);
@@ -116,6 +151,11 @@ public class ModeradorController {
         return "vistasModerador/ficha-item";
     }
 
+    /**
+     * Este metodo elimina un comentario correspondiente a un Item específico.
+     * @param id EL id del comentario que quiere ser eliminado.
+     * @return Devuelve un redireccionamiento al Item correspondiente, con la eliminación del comentario aplicada.
+     * */
     @PostMapping("/item/eliminar-comentario")
     public String eliminarComentarioItem(@RequestParam(value="id") Long id){
         Long idItem= comentarioItemRepository.findById(id).get().getItem().getId();
@@ -123,6 +163,11 @@ public class ModeradorController {
         return "redirect:/moderador/item?id="+idItem;
     }
 
+    /**
+     * Este metodo elimina un comentario correspondiente a un Personaje específico.
+     * @param id EL id del comentario que quiere ser eliminado.
+     * @return Devuelve un redireccionamiento al Personaje correspondiente, con la eliminación del comentario aplicada.
+     * */
     @PostMapping("/personaje/eliminar-comentario")
     public String eliminarComentarioPersonaje(@RequestParam(value="id") Long id){
         Long idItem= comentarioPersonajeRepository.findById(id).get().getPersonaje().getId();
@@ -130,6 +175,11 @@ public class ModeradorController {
         return "redirect:/moderador/personaje?id="+idItem;
     }
 
+    /**
+     * Este metodo se encarga de realizar la consulta del elemento que está siendo buscado por un Moderador.
+     * @param texto La cadena de texto con el nombre del elemento a ser buscado.
+     * @return Devuelve la vista con el resultado de la busqueda y las herramientas de moderación.
+     * */
     @GetMapping ("/buscar-elemento")
     public String busqueda(@RequestParam(value="texto") String texto, Model model){
         model.addAttribute("personajes", personajeRepository.searchByNombreLike(texto));

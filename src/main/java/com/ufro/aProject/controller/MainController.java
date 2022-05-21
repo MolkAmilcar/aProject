@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Esta controlador está encargado de manejar y mostrar la pagina inicial del proyecto.
  *
- * @author Isidora Albayay
+ * @author Amilcar Celis, Isidora Albayay
  */
 
 @Controller
@@ -51,8 +51,8 @@ public class MainController {
     }
 
     /**
-     * Este metodo se encarga de mostrar la pantalla con el formulario de inicio de sesión del moderador.
-     * @return Devuelve la vista con el inicio de sesión para el moderador.
+     * Este metodo se encarga de mostrar la pantalla con el formulario de inicio de sesión del Moderador.
+     * @return Devuelve la vista con el inicio de sesión para el Moderador.
      * */
     @RequestMapping("/login")
     public String login(){
@@ -64,6 +64,7 @@ public class MainController {
 
     /**
      * Este metodo se encarga de realizar la consulta del elemento que está siendo buscado.
+     * @param texto La cadena de texto con el nombre del elemento a ser buscado.
      * @return Devuelve la vista con el resultado de la busqueda.
      * */
     @GetMapping ("/buscar-elemento")

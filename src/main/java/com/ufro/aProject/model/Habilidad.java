@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * Esta clase corresponde a las habilidades con las que los personajes cuentan y muestran en su detalle de personaje.
  *
- * @author Amilcar Celis
+ * @author Amilcar Celis, Isidora Albayay
  */
 @Entity
 public class Habilidad {
