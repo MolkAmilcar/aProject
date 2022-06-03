@@ -108,7 +108,7 @@ public class ComentarioItem {
     }
 
     /**
-     * Este metodo agrega un producto al carrito del cliente
+     * Este metodo obtiene la fecha actual local y la devuelve.
      * @return Devuelve los datos de la fecha en el instante en que el comentario es creado, y define su formato.
      * */
     public String getFormatDate() {
