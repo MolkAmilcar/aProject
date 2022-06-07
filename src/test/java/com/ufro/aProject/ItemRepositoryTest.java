@@ -23,7 +23,7 @@ public class ItemRepositoryTest {
     @DisplayName("Busqueda de texto")
     @ParameterizedTest
     @CsvSource({"a", "ojo", "p"})
-    public void searchByNombreLike(String texto){
+    public void testSearchByNombreLike(String texto){
         List<Item> resultadosBusqueda = itemRepository.searchByNombreLike(texto);
         //variabilidad de pruebas
         Assertions.assertTrue(resultadosBusqueda.size()>0);
