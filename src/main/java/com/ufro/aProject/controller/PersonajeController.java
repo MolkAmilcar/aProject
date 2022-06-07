@@ -55,45 +55,29 @@ public class PersonajeController {
         model.addAttribute("personaje",personaje.orElseThrow());
         model.addAttribute("comentarios",comentarioPersonajeRepository.findAllByPersonajeIdOrderByFechaDesc(id));
 
-        //vidas
-        ArrayList<Integer> vidas = new ArrayList<Integer>();
-        for(int i=0; i<personaje.get().getVida();i++){
-            vidas.add(1);
-        }
-        model.addAttribute("vidas",vidas);
-        //daños
-        ArrayList<Integer> danos = new ArrayList<Integer>();
-        for(int i=0; i<personaje.get().getDaño();i++){
-            danos.add(1);
-        }
-        model.addAttribute("danos",danos);
-        //velocidades
-        ArrayList<Integer> velocidades = new ArrayList<Integer>();
-        for(int i=0; i<personaje.get().getVelocidad();i++){
-            velocidades.add(1);
-        }
-        model.addAttribute("velocidades",velocidades);
-        //sigilos
-        ArrayList<Integer> sigilos = new ArrayList<Integer>();
-        for(int i=0; i<personaje.get().getSigilo();i++){
-            sigilos.add(1);
-        }
-        model.addAttribute("sigilos",sigilos);
-        //evasiones
-        ArrayList<Integer> evasiones = new ArrayList<Integer>();
-        for(int i=0; i<personaje.get().getEvasion();i++){
-            evasiones.add(1);
-        }
+        model.addAttribute("armaduras",estadisticas(personaje.get().getArmadura()));
+        model.addAttribute("evasiones",estadisticas(personaje.get().getEvasion()));
+        model.addAttribute("sigilos",estadisticas(personaje.get().getSigilo()));
+        model.addAttribute("velocidades",estadisticas(personaje.get().getVelocidad()));
+        model.addAttribute("danos",estadisticas(personaje.get().getDaño()));
+        model.addAttribute("vidas",estadisticas(personaje.get().getVida()));
 
-        model.addAttribute("evasiones",evasiones);
-        //armaduras
-        ArrayList<Integer> armaduras = new ArrayList<Integer>();
-        for(int i=0; i<personaje.get().getArmadura();i++){
-            armaduras.add(1);
-        }
-        model.addAttribute("armaduras",armaduras);
         return "ficha-personaje";
+
     }
+    /**
+     * Este metodo ayuda a definir la cantidad de puntos de las estadisticas de un personaje
+     * @param largo
+     * @return Devuelve un ArrayList que representa la cantidad de puntos de estadistica.
+     * */
+    public ArrayList<Integer> estadisticas( int largo ){
+        ArrayList<Integer> estadistica = new ArrayList<Integer>();
+        for(int i=0; i<largo;i++){
+            estadistica.add(1);
+        }
+        return estadistica;
+    }
+
 
     /**
      * Este metodo genera e incorpora un nuevo comentario a la vista de detalle del Personaje.

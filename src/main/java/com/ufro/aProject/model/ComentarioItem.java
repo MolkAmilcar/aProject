@@ -45,10 +45,11 @@ public class ComentarioItem {
      * @param mensaje El mensaje del comentario.
      * @param nombre El nombre del autor del comentario.
      */
-    public ComentarioItem(Timestamp fecha, String mensaje, String nombre) {
+    public ComentarioItem(Timestamp fecha, String mensaje, String nombre, Long id) {
         this.fecha = fecha;
         this.mensaje = mensaje;
         this.nombre = nombre;
+        this.id=id;
     }
 
     /**
