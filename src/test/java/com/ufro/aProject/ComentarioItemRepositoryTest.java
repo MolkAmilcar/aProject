@@ -38,7 +38,12 @@ public class ComentarioItemRepositoryTest {
         comentarioItemRepository.save(comentario);
         List<ComentarioItem> resultado = new ArrayList<>();
         comentarioItemRepository.findAllByItemIdOrderByFechaDesc(itemRepository.findById(1L).get().getId()).forEach(e -> resultado.add(e));
+        //variabilidad de pruebas
+        Assertions.assertNotNull(comentarioItemRepository.findById(1L));
         Assertions.assertEquals(resultado.size(), cantidadEsperada);
+        Assertions.assertFalse(resultado.isEmpty());
+        Assertions.assertNotNull(resultado);
+
     }
 
 }
