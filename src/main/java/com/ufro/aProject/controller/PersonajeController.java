@@ -78,7 +78,6 @@ public class PersonajeController {
         return estadistica;
     }
 
-
     /**
      * Este metodo genera e incorpora un nuevo comentario a la vista de detalle del Personaje.
      * @param comentarioPersonaje EL Comentario correspondiente al Personaje.

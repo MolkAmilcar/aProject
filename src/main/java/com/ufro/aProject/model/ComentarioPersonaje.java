@@ -12,8 +12,6 @@ import java.util.Locale;
  */
 @Entity
 public class ComentarioPersonaje {
-
-    //columnas
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -35,7 +33,6 @@ public class ComentarioPersonaje {
     /**
      * Este constructor está vacío y se usa para instanciar un comentario sin valores.
      */
-    //constructores, getters y setters
     public ComentarioPersonaje() {
 
     }
@@ -115,10 +112,7 @@ public class ComentarioPersonaje {
      * */
     public String getFormatDate() {
         return DateFormat
-                // obtiene una instancia de fecha y hora actual con los formatos dados y en el formato de Locale (es CL)
                 .getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT, new Locale("es", "CL"))
-                // Locale generalmente no es necesario, se agrega en caso de que el sistema que ejecuta la aplicación
-                // tenga un lenguaje y país distinto al deseado (inglés p.ej.)
                 .format(getFecha());
     }
 

@@ -25,7 +25,6 @@ public class ItemRepositoryTest {
     @CsvSource({"a", "ojo", "p"})
     public void testSearchByNombreLike(String texto){
         List<Item> resultadosBusqueda = itemRepository.searchByNombreLike(texto);
-        //variabilidad de pruebas
         Assertions.assertTrue(resultadosBusqueda.size()>0);
         Assertions.assertNotNull(resultadosBusqueda);
     }

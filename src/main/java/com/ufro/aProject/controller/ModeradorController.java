@@ -1,7 +1,5 @@
 package com.ufro.aProject.controller;
 
-import com.ufro.aProject.model.ComentarioItem;
-import com.ufro.aProject.model.ComentarioPersonaje;
 import com.ufro.aProject.model.Item;
 import com.ufro.aProject.model.Personaje;
 import com.ufro.aProject.repository.*;
@@ -64,7 +62,6 @@ public class ModeradorController {
         return "vistasModerador/faq";
     }
 
-    //Personajes
     /**
      * Este metodo muestra una vista con el listado del total de personajes registrados a los que puede accededer un Moderador.
      * @return Devuelve el archivo con la vista del listado total de personajes tiene acceso un Moderador.
@@ -87,38 +84,37 @@ public class ModeradorController {
         model.addAttribute("personaje",personaje.orElseThrow());
         model.addAttribute("comentarios",comentarioPersonajeRepository.findAllByPersonajeIdOrderByFechaDesc(id));
 
-        //vidas
         ArrayList<Integer> vidas = new ArrayList<Integer>();
         for(int i=0; i<personaje.get().getVida();i++){
             vidas.add(1);
         }
         model.addAttribute("vidas",vidas);
-        //daños
+
         ArrayList<Integer> danos = new ArrayList<Integer>();
         for(int i=0; i<personaje.get().getDaño();i++){
             danos.add(1);
         }
         model.addAttribute("danos",danos);
-        //velocidades
+
         ArrayList<Integer> velocidades = new ArrayList<Integer>();
         for(int i=0; i<personaje.get().getVelocidad();i++){
             velocidades.add(1);
         }
         model.addAttribute("velocidades",velocidades);
-        //sigilos
+
         ArrayList<Integer> sigilos = new ArrayList<Integer>();
         for(int i=0; i<personaje.get().getSigilo();i++){
             sigilos.add(1);
         }
         model.addAttribute("sigilos",sigilos);
-        //evasiones
+
         ArrayList<Integer> evasiones = new ArrayList<Integer>();
         for(int i=0; i<personaje.get().getEvasion();i++){
             evasiones.add(1);
         }
 
         model.addAttribute("evasiones",evasiones);
-        //armaduras
+
         ArrayList<Integer> armaduras = new ArrayList<Integer>();
         for(int i=0; i<personaje.get().getArmadura();i++){
             armaduras.add(1);

@@ -42,7 +42,6 @@ public class ComentarioPersonajeRepositoryTest {
         comentarioPersonajeRepository.save(comentario);
         List<ComentarioPersonaje> resultado = new ArrayList<>();
         comentarioPersonajeRepository.findAllByPersonajeIdOrderByFechaDesc(personajeRepository.findById(1L).get().getId()).forEach(e -> resultado.add(e));
-        //variabilidad de pruebas
         Assertions.assertNotNull(comentarioPersonajeRepository.findById(1L));
         Assertions.assertEquals(resultado.size(), cantidadEsperada);
         Assertions.assertFalse(resultado.isEmpty());

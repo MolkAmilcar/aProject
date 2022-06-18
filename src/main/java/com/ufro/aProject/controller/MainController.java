@@ -59,9 +59,6 @@ public class MainController {
         return "vistasModerador/inicio-sesion-moderador";
     }
 
-
-    //Ojo cambios en vista INDEX y nueva vista resultados-busqueda
-
     /**
      * Este metodo se encarga de realizar la consulta del elemento que está siendo buscado.
      * @param texto La cadena de texto con el nombre del elemento a ser buscado.

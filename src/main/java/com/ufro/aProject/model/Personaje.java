@@ -10,8 +10,6 @@ import java.util.List;
  */
 @Entity
 public class Personaje {
-
-    //columnas
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -44,14 +42,9 @@ public class Personaje {
     @Column(name = "sigilo", nullable = false)
     private int sigilo;
 
-
-    // clave foranea
-
     @ManyToMany
     @JoinTable(name = "personaje_habilidades", joinColumns = @JoinColumn(name = "personaje_id"), inverseJoinColumns = @JoinColumn(name = "habilidad_id"))
     private List<Habilidad> habilidades;
-
-    //constructores, getters y setters
 
     /**
      * Este constructor está vacío y se usa para instanciar un Personaje sin valores.
