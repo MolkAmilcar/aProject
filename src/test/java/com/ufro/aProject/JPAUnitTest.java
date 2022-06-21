@@ -97,6 +97,14 @@ public class JPAUnitTest {
     }
 
     @Test
+    public void ingresoItem(){
+        Item item = itemRepository.save(new Item(null, "Item de prueba", "url de prueba", "este es un ítem de prueba"));
+        assertThat(item).hasFieldOrPropertyWithValue("nombre", "Item de prueba");
+        assertThat(item).hasFieldOrPropertyWithValue("imagen", "url de prueba");
+        assertThat(item).hasFieldOrPropertyWithValue("descripcion", "este es un ítem de prueba");
+    }
+
+    @Test
     public void ingresoComentarioItem(){
         java.sql.Timestamp ts = java.sql.Timestamp.valueOf( "2022-05-21 10:52:49.533000") ;
         ComentarioItem comentarioItem= comentarioItemRepository.save(new ComentarioItem(ts,"comentario de prueba", "usuario de prueba",null));

@@ -41,6 +41,13 @@ public class Item {
         this.descripcion = descripcion;
     }
 
+    public Item(Long id, String nombre, String imagen, String descripcion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.descripcion = descripcion;
+    }
+
     public void mostrarInformacion() {}
 
     /**
