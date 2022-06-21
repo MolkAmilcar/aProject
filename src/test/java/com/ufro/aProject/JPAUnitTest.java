@@ -95,4 +95,22 @@ public class JPAUnitTest {
         assertThat(habilidad).hasFieldOrPropertyWithValue("descripcion", "Esta habilidad es un test");
         assertThat(habilidad).hasFieldOrPropertyWithValue("enfriamiento", 10L);
     }
+
+    @Test
+    public void ingresoComentarioItem(){
+        java.sql.Timestamp ts = java.sql.Timestamp.valueOf( "2022-05-21 10:52:49.533000") ;
+        ComentarioItem comentarioItem= comentarioItemRepository.save(new ComentarioItem(ts,"comentario de prueba", "usuario de prueba",null));
+        comentarioItem.setItem(itemRepository.findById(1L).get());
+        assertThat(comentarioItem).hasFieldOrPropertyWithValue("nombre", "usuario de prueba");
+        assertThat(comentarioItem).hasFieldOrPropertyWithValue("mensaje", "comentario de prueba");
+    }
+
+    @Test
+    public void ingresoComentarioPersonaje(){
+        java.sql.Timestamp ts = java.sql.Timestamp.valueOf( "2022-05-21 10:52:49.533000") ;
+        ComentarioPersonaje comentarioPersonaje= comentarioPersonajeRepository.save(new ComentarioPersonaje(ts,"comentario de prueba", "usuario de prueba"));
+        comentarioPersonaje.setPersonaje(personajeRepository.findById(1L).get());
+        assertThat(comentarioPersonaje).hasFieldOrPropertyWithValue("nombre", "usuario de prueba");
+        assertThat(comentarioPersonaje).hasFieldOrPropertyWithValue("mensaje", "comentario de prueba");
+    }
 }
