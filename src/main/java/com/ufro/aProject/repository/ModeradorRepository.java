@@ -5,5 +5,4 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ModeradorRepository extends CrudRepository<Moderador, Long> {
      Moderador findByNombre(String nombre);
-
 }

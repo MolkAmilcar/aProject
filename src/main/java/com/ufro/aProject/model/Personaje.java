@@ -53,7 +53,7 @@ public class Personaje {
     }
 
     /**
-     * Este constructor se emplea para determinar las características y valores de los atributos de un Personaje.
+     * Este constructor se emplea para determinar las características y valores de los atributos de un Personaje menos su imagen.
      *
      * @param nombre El nombre del Personaje.
      * @param descripcion La descripción de las características del Personaje.
@@ -68,6 +68,33 @@ public class Personaje {
     public Personaje(String nombre, String descripcion, int vida, int daño, int velocidad, int armadura, int evasion, int sigilo, List<Habilidad> habilidades) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.vida = vida;
+        this.daño = daño;
+        this.velocidad = velocidad;
+        this.armadura = armadura;
+        this.evasion = evasion;
+        this.sigilo = sigilo;
+        this.habilidades = habilidades;
+    }
+
+    /**
+     * Este constructor se emplea para determinar las características y valores de los atributos de un Personaje.
+     *
+     * @param nombre El nombre del Personaje.
+     * @param descripcion La descripción de las características del Personaje.
+     * @param imagen La imagen de correspondiente del Personaje.
+     * @param vida La cantidad de puntos de vida del Personaje.
+     * @param daño La cantidad de puntos de daño del Personaje.
+     * @param velocidad La cantidad de puntos de velocidad del Personaje.
+     * @param armadura La cantidad de puntos de armadura del Personaje.
+     * @param evasion La cantidad de puntos de evasion del Personaje.
+     * @param sigilo La cantidad de puntos de sigilo del Personaje.
+     * @param habilidades Las habilidades correspondientes al Personaje.
+     */
+    public Personaje(String nombre, String descripcion, String imagen, int vida, int daño, int velocidad, int armadura, int evasion, int sigilo, List<Habilidad> habilidades) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
         this.vida = vida;
         this.daño = daño;
         this.velocidad = velocidad;
