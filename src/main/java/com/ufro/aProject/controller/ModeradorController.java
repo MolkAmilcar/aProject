@@ -183,22 +183,40 @@ public class ModeradorController {
         return "vistasModerador/resultados-busqueda-moderador";
     }
 
+    /**
+     * Este metodo direcciona a la vista del formulario de registro de item
+     * @return Devuelve el archivo con la vista del formulario
+     * */
     @RequestMapping("/registrar-item")
     public String registrarItem(){
         return "vistasModerador/registrarItem";
     }
 
+    /**
+     * Este metodo guarda los datos ingresados en la base de datos en la tabla de item de nuestra base de datos
+     * @param item item que será guardado en la base de datos
+     * @return redirecciona a la pagina del listado de items
+     * */
     @PostMapping("/registrar-item/nuevo-item")
     public String nuevoItem(@ModelAttribute Item item){
         itemRepository.save(item);
         return "redirect:/moderador/items";
     }
 
+    /**
+     * Este metodo direcciona a la vista del formulario de registro de personaje
+     * @return Devuelve el archivo con la vista del formulario
+     * */
     @RequestMapping("/registrar-personaje")
     public String registrarPersonaje(){
         return "vistasModerador/registrarPersonaje";
     }
 
+    /**
+     * Este metodo guarda los datos ingresados en la base de datos en la tabla de personaje de nuestra base de datos
+     * @param personaje personaje que será guardado en la base de datos
+     * @return redirecciona a la pagina del listado de personajes
+     * */
     @PostMapping("/registrar-personaje/nuevo-personaje")
     public String nuevoPersonaje(@ModelAttribute Personaje personaje){
         personajeRepository.save(personaje);
