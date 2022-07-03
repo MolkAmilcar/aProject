@@ -184,7 +184,7 @@ public class ModeradorController {
     }
 
     @RequestMapping("/registrar-item")
-    public String registrarCurso(){
+    public String registrarItem(){
         return "vistasModerador/registrarItem";
     }
 
@@ -193,6 +193,18 @@ public class ModeradorController {
         itemRepository.save(item);
         return "redirect:/moderador/items";
     }
+
+    @RequestMapping("/registrar-personaje")
+    public String registrarPersonaje(){
+        return "vistasModerador/registrarPersonaje";
+    }
+
+    @PostMapping("/registrar-personaje/nuevo-personaje")
+    public String nuevoPersonaje(@ModelAttribute Personaje personaje){
+        personajeRepository.save(personaje);
+        return "redirect:/moderador/personajes";
+    }
+
 
 
 
