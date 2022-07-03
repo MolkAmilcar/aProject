@@ -15,8 +15,8 @@
     <nav>
         <title>A project</title>
         <ul class="inicio">
-            <li class="logo"><a th:href="@{/moderador}"><img th:src="@{imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
-            <li class="logo"><a th:href="@{/moderador}"><img th:src="@{imagenes/project2.png}" height="30" width="auto"></a></li>
+            <li class="logo"><a th:href="@{/moderador}"><img th:src="@{/imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
+            <li class="logo"><a th:href="@{/moderador}"><img th:src="@{/imagenes/project2.png}" height="30" width="auto"></a></li>
         </ul>
         <p class="vacio"></p>
         <ul class="menu-moderador">
@@ -32,8 +32,8 @@
 <div class="cuerpo">
     <div class="cuerpo-inicio">
         <div class="logo-inicio">
-            <a href="index.html"><img th:src="@{imagenes/logoEyeBackground.png}"  width="199.86" height="160" alt="logo"></a>
-            <a href="index.html">Project</a>
+            <a th:href="@{/moderador}" ><img th:src="@{imagenes/logoEyeBackground.png}"  width="199.86" height="160" style="margin-left: 30px" alt="logo"></a>
+            <a th:href="@{/moderador}" ><img th:src="@{imagenes/project2.png}" height="50" width="auto"></a>
         </div>
         <form th:action="@{/moderador/buscar-elemento}" method="get" >
             <div class="form-outline">

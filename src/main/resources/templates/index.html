@@ -29,8 +29,8 @@
     <div class="cuerpo">
         <div class="cuerpo-inicio">
             <div class="logo-inicio">
-                <a href="index.html"><img th:src="@{imagenes/logoEyeBackground.png}"  width="199.86" height="160" style="margin-left: 30px" alt="logo"></a>
-                <a href="index.html"><img th:src="@{imagenes/project2.png}" height="50" width="auto"></a>
+                <a th:href="@{/}"><img th:src="@{imagenes/logoEyeBackground.png}"  width="199.86" height="160" style="margin-left: 30px" alt="logo"></a>
+                <a th:href="@{/}"><img th:src="@{imagenes/project2.png}" height="50" width="auto"></a>
             </div>
             <form th:action="@{/buscar-elemento}" method="get" >
             <div class="form-outline">
