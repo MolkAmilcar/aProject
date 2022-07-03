@@ -27,9 +27,6 @@ public class ModeradorController {
     private ComentarioPersonajeRepository comentarioPersonajeRepository;
 
     @Autowired
-    private NombreRepository nombreRepository;
-
-    @Autowired
     private ItemRepository itemRepository;
 
     @Autowired
