@@ -191,7 +191,7 @@ public class ModeradorController {
     @PostMapping("/registrar-item/nuevo-item")
     public String nuevoItem(@ModelAttribute Item item){
         itemRepository.save(item);
-        return "redirect:/items";
+        return "redirect:/moderador/items";
     }
 
 
