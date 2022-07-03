@@ -26,6 +26,7 @@ nav{
 .menu{
     list-style: none;
     width: 20%;
+    color: white;
 }
 
 .menu li{
@@ -57,6 +58,38 @@ nav{
 }
 
 .menu button:hover{
+    color:#2353BB;
+}
+
+.menu-moderador{
+    list-style: none;
+    width: 40%;
+    color: white;
+}
+
+.menu-moderador li{
+    display: inline;
+    padding-right: 15px;
+    font-size: 30px;
+}
+
+.menu-moderador a{
+    text-decoration: none;
+    color:white;
+    font-family: VT323;
+    text-align: center;
+}
+
+.menu-moderador button{
+    text-decoration: none;
+    color:white;
+    font-family: VT323;
+    text-align: center;
+    background:none;
+    border:none;
+}
+
+.menu-moderador button:hover{
     color:#2353BB;
 }
 
@@ -100,12 +133,12 @@ footer {
     border: 9px;
     border-color: #634368;
     border-style: solid;
-    border-radius:9px;
+    border-radius: 12px;
+    background-color: white;
 }
 
 .buscarButton{
-    background-color: #A986AE;
-    padding: 3px;
+    padding: 4px;
 }
 
 .form-control{      

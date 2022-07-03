@@ -1,5 +1,7 @@
 package com.ufro.aProject.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.text.DateFormat;
@@ -20,6 +22,7 @@ public class ComentarioPersonaje {
     @Column(name = "fecha")
     private Timestamp fecha;
 
+    @NotNull
     @Column(name = "mensaje", nullable = false, columnDefinition = "TEXT")
     private String mensaje;
 

@@ -16,7 +16,7 @@
             <title>A project</title>            
             <ul class="inicio">
                 <li class="logo"><a th:href="@{/}"><img th:src="@{imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
-                <li class="logo"><a th:href="@{/}">Project</a></li>
+                <li class="logo"><a th:href="@{/}"><img th:src="@{imagenes/project2.png}" height="30" width="auto"></a></li>
             </ul>
             <p class="vacio"></p>
             <ul class="menu">
@@ -29,13 +29,13 @@
     <div class="cuerpo">
         <div class="cuerpo-inicio">
             <div class="logo-inicio">
-                <a href="index.html"><img th:src="@{imagenes/logoEyeBackground.png}"  width="199.86" height="160" alt="logo"></a>
-                <a href="index.html">Project</a>            
+                <a href="index.html"><img th:src="@{imagenes/logoEyeBackground.png}"  width="199.86" height="160" style="margin-left: 30px" alt="logo"></a>
+                <a href="index.html"><img th:src="@{imagenes/project2.png}" height="50" width="auto"></a>
             </div>
             <form th:action="@{/buscar-elemento}" method="get" >
             <div class="form-outline">
                 <input type="text" id="form1" class="form-control" name="texto"  placeholder="Buscar..." aria-label="Search" required />
-                <input type="image" th:src="@{imagenes/buscarIcon.png}" class="buscarButton" value="Buscar" alt="submit" height="38">
+                <input type="image" th:src="@{imagenes/searchIcon2.png}" class="buscarButton" value="Buscar" alt="submit" height="38">
             </div>
             </form>
             <div class="filtros">

@@ -85,11 +85,15 @@ public class PersonajeController {
      * */
     @PostMapping("/personaje/nuevo-comentario")
     public String nuevoComentarioPersonaje(@ModelAttribute ComentarioPersonaje comentarioPersonaje){
-        Date date = new Date();
-        Timestamp sqlTimestamp = new Timestamp(date.getTime());
-        comentarioPersonaje.setFecha(sqlTimestamp);
-        comentarioPersonaje.setNombre(generarNombreComentario());
-        comentarioPersonajeRepository.save(comentarioPersonaje);
+        if (comentarioPersonaje.getMensaje().trim().length() != 0){
+            Date date = new Date();
+            Timestamp sqlTimestamp = new Timestamp(date.getTime());
+            comentarioPersonaje.setFecha(sqlTimestamp);
+            comentarioPersonaje.setNombre(generarNombreComentario());
+            comentarioPersonajeRepository.save(comentarioPersonaje);
+            return "redirect:/personaje?id="+comentarioPersonaje.getPersonaje().getId();
+        }
+        System.out.println("invalid message");
         return "redirect:/personaje?id="+comentarioPersonaje.getPersonaje().getId();
     }
 
