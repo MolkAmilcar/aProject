@@ -183,4 +183,17 @@ public class ModeradorController {
         return "vistasModerador/resultados-busqueda-moderador";
     }
 
+    @RequestMapping("/registrar-item")
+    public String registrarCurso(){
+        return "vistasModerador/registrarItem";
+    }
+
+    @PostMapping("/registrar-item/nuevo-item")
+    public String nuevoItem(@ModelAttribute Item item){
+        itemRepository.save(item);
+        return "redirect:/items";
+    }
+
+
+
 }

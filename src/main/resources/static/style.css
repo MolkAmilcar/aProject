@@ -620,3 +620,38 @@ footer {
     margin:0 auto;
     margin-top:5%;
 }
+
+.contenido form{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    background-color: #d2d2d2dc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #634368;
+}
+
+.contenido .dato{
+    width: 400px;
+    margin-top: 5px;
+}
+
+.contenido .registrar {
+    margin-top: 25px;
+    max-width: 200px;
+    background-color: #634368;
+    border-color: #634368;
+}
+
+.contenido .registrar:hover{
+    background-color: #337c8e;
+    border-color: #337c8e;
+}
+
+.contenido .comboBox{
+    width: 400px;
+}
