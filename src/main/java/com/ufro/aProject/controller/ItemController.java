@@ -64,11 +64,14 @@ public class ItemController {
      * */
     @PostMapping("/item/nuevo-comentario")
     public String nuevoComentarioItem(@ModelAttribute ComentarioItem comentarioItem){
-        Date date = new Date();
-        Timestamp sqlTimestamp = new Timestamp(date.getTime());
-        comentarioItem.setFecha(sqlTimestamp);
-        comentarioItem.setNombre(generarNombreComentario());
-        comentarioItemRepository.save(comentarioItem);
+        if (comentarioItem.getMensaje().trim().length() != 0) {
+            Date date = new Date();
+            Timestamp sqlTimestamp = new Timestamp(date.getTime());
+            comentarioItem.setFecha(sqlTimestamp);
+            comentarioItem.setNombre(generarNombreComentario());
+            comentarioItemRepository.save(comentarioItem);
+            return "redirect:/item?id="+comentarioItem.getItem().getId();
+        }
         return "redirect:/item?id="+comentarioItem.getItem().getId();
     }
 

@@ -14,14 +14,8 @@
     <nav>
         <title>A project</title>
         <ul class="inicio">
-            <li class="logo"><a th:href="@{/moderador}"><img th:src="@{/imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
-            <li class="logo"><a th:href="@{/moderador}">Project</a></li>
-        </ul>
-        <p class="vacio"></p>
-        <ul class="menu">
-            <form th:action="@{/logout}" method="post">
-                <li class="elementos"> <button type="submit">Cerrar sesión</button></li>
-            </form>
+            <li class="logo"><a th:href="@{/}"><img th:src="@{imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
+            <li class="logo"><a th:href="@{/}"><img th:src="@{imagenes/project2.png}" height="30" width="auto"></a></li>
         </ul>
     </nav>
 </header>
@@ -37,16 +31,16 @@
                     <div class="card-body">
                         <form action="/perform_login" method="post" class="form-signin">
                             <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nombre de suario</label>
+                            <label for="username" class="form-label" style="font-size: 25px">Nombre de suario</label>
                             <div class="purpleOutline"><input type="text" id="username" name="username" class="form-control exampleInputEmail1 purpleOutline"></div>
                             </div>
                             <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label text" >Contraseña</label>
+                            <label for="password" class="form-label text" style="font-size: 25px">Contraseña</label>
                             <div class="purpleOutline">
                                 <input type="password" id="password" name="password" class="exampleInputPassword1 form-control">
                             </div>
                             </div>
-                            <button type="submit" >Entrar</button>
+                            <input type="image" name="submit" th:src="@{imagenes/Ingresar.png}" border="0" alt="Submit" height="60px" width="auto" style="margin-left: 30px"/>
                             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
                         </form>
                     </div>
@@ -61,7 +55,6 @@
             <a href="#"><img src="/imagenes/youtubeIcon.png" class="socials" width='30' height='30' name='whatever'></a>
         </ul>
         <p></p>
-        <input type='image' class="download" src='/imagenes/descargarIcon.png' height="40" name='whatever' value='submit' />
     </footer>
 </body>
 </html>

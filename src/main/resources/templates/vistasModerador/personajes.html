@@ -15,12 +15,15 @@
     <nav>
         <title>A project</title>
         <ul class="inicio">
-            <li class="logo"><a th:href="@{/moderador}"><img th:src="@{/imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
-            <li class="logo"><a th:href="@{/moderador}">Project</a></li>
+            <li class="logo"><a th:href="@{/}"><img th:src="@{imagenes/logoEyeBackground.png}" width="88" height="70" alt="logo"></a></li>
+            <li class="logo"><a th:href="@{/}"><img th:src="@{imagenes/project2.png}" height="30" width="auto"></a></li>
         </ul>
         <p class="vacio"></p>
-        <ul class="menu">
+        <ul class="menu-moderador">
             <form th:action="@{/logout}" method="post">
+                <li class="elementos"><a th:href="@{/sobre-nosotros}">Agregar Personaje</a></li>
+                <li class="elementos"><a th:href="@{/sobre-nosotros}">Agregar Item</a></li>
+                <li class="elementos"><a>|</a></li>
                 <li class="elementos"> <button type="submit">Cerrar sesión</button></li>
             </form>
         </ul>
